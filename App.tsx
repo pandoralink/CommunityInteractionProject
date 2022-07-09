@@ -19,13 +19,8 @@ import {
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+// import {Button} from '@rneui/themed';
 
 const Section: React.FC<
   PropsWithChildren<{
@@ -57,6 +52,44 @@ const Section: React.FC<
   );
 };
 
+// const App = () => {
+//   const isDarkMode = useColorScheme() === 'dark';
+
+//   const backgroundStyle = {
+//     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+//   };
+
+//   return (
+//     <SafeAreaView style={backgroundStyle}>
+//       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+//       <ScrollView
+//         contentInsetAdjustmentBehavior="automatic"
+//         style={backgroundStyle}>
+//         <Header />
+//         <View
+//           style={{
+//             backgroundColor: isDarkMode ? Colors.black : Colors.white,
+//           }}>
+//           <Section title="Step One">
+//             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+//             screen and then come back to see your edits.
+//           </Section>
+//           <Section title="See Your Changes">
+//             <ReloadInstructions />
+//           </Section>
+//           <Section title="Debug">
+//             <DebugInstructions />
+//           </Section>
+//           <Section title="Learn More">
+//             Read the docs to discover what to do next:
+//           </Section>
+//           <LearnMoreLinks />
+//         </View>
+//       </ScrollView>
+//     </SafeAreaView>
+//   );
+// };
+
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -70,30 +103,32 @@ const App = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
         <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
+          style={[
+            styles.loginButton,
+            {
+              backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            },
+          ]}>
           <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section>
-          <LearnMoreLinks />
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
+// <Button
+//   title="登录2"
+//   color="#48D597"
+//   // eslint-disable-next-line react-native/no-inline-styles
+//   buttonStyle={{
+//     backgroundColor: 'black',
+//     borderWidth: 2,
+//     borderColor: 'white',
+//     borderRadius: 15,
+//   }}
+// />
 
 const styles = StyleSheet.create({
   sectionContainer: {
@@ -111,6 +146,10 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
+  },
+  loginButton: {
+    marginLeft: 40,
+    marginRight: 40,
   },
 });
 
